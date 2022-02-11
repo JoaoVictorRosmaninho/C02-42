@@ -1,19 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 20:24:17 by jv                #+#    #+#             */
+/*   Updated: 2022/02/11 20:27:39 by jv               ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-unsigned char	g_hexatable[16] = {
-	'0', '1', '2', '3', '4', '5', '6', '7',
-	'8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
-};
-
-void	hexconvert(unsigned int num)
+void	hexconvert(unsigned int num, char *hexatable)
 {
 	char	txt_hexa[2];
-	int 	i;
+	int		i;
 
 	i = 2;
 	while (i--)
 	{
-		txt_hexa[i] =  g_hexatable[num % 16];
+		txt_hexa[i] = hexatable[num % 16];
 		num /= 16;
 	}
 	write(1, "\\", 1);
@@ -27,13 +34,30 @@ int	is_valid(unsigned char ch)
 	return (1);
 }
 
+void	fill(char *str)
+{
+	char	ch;
+	int		count;
+
+	ch = '0';
+	count = 0;
+	while (ch <= '9')
+		str[count++] = ch++;
+	ch = 'a';
+	while (ch <= 'f')
+		str[count++] = ch++;
+}
+
 void	ft_putstr_non_printable(char *str)
 {
+	char	hexatable[16];
+
+	fill(hexatable);
 	while (*str)
 	{
 		if (is_valid(*(unsigned char *)str) == 0)
 		{
-			hexconvert(*(unsigned *)str);
+			hexconvert(*(unsigned *)str, hexatable);
 			str++;
 			continue ;
 		}

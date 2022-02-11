@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 19:14:46 by jv                #+#    #+#             */
+/*   Updated: 2022/02/11 19:19:23 by jv               ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strcpy(char *dest, char *src) {
-  char *tmp;
+char	*ft_strcpy(char *dest, char *src)
+{
+	char	*tmp;
 
-  tmp = dest;
-  while (*src) 
-    *dest++ = *src++;
-  *dest = *src;
-  return tmp;
+	tmp = dest;
+	while (*src)
+		*dest++ = *src++;
+	*dest = *src;
+	return (tmp);
 }

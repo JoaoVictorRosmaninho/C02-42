@@ -1,13 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/11 19:21:07 by jv                #+#    #+#             */
+/*   Updated: 2022/02/11 19:21:11 by jv               ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strncpy(char *dest, char *src, unsigned int n) {
-  unsigned int i;
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int	i;
 
-  i = 0;
-  while (i < n && src[i]) {
-    dest[i] = src[i];
-    i++;
-  }
-  while (i < n)
-    dest[i++] = '\0';
-  return (dest);
+	i = 0;
+	while (i < n && src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+		dest[i++] = '\0';
+	return (dest);
 }
