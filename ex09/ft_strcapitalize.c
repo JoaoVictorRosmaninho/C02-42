@@ -20,10 +20,10 @@ int	is_alpha(char ch)
 void	capitalize(char **str)
 {
 	int		i;
-	char	*tmp;
+	char	*temp;
 
 	i = 0;
-	temp = str;
+	temp = *str;
 	while (*temp)
 	{
 		if (!(is_alpha(*temp)))
