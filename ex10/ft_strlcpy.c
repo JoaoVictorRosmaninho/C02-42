@@ -15,8 +15,8 @@ unsigned int	ft_strlen(char *s)
 	char	*tmp;
 
 	tmp = s;
-	while (*s++)
-		;
+	while (*s)
+          s++;
 	return ((int)(s - tmp) - 1);
 }
 
@@ -25,6 +25,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	unsigned int	i;
 
 	i = 0;
+        if (size < 1 )
+          return ((ft_strlen(src));
 	while (i < (size - 1) && src[i])
 	{
 		dest[i] = src[i];
