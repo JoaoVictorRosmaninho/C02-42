@@ -6,18 +6,18 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:01:05 by jv                #+#    #+#             */
-/*   Updated: 2022/02/14 21:32:12 by jv               ###   ########.fr       */
+/*   Updated: 2022/02/15 20:32:17 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *s)
+unsigned int	ft_strlen(char *str)
 {
 	char	*tmp;
 
-	tmp = s;
-	while (*s)
-		s++;
-	return ((int)(s - tmp) - 1);
+	tmp = str;
+	while (*str)
+		str++;
+	return ((int)(str - tmp));
 }
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
